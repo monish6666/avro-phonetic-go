@@ -39,7 +39,7 @@ For production-grade transliteration parity, load a full grammar JSON using
 ## Installation
 
 ```bash
-go get github.com/yourname/avro-phonetic-go
+go get github.com/mhshajib/avro-phonetic-go
 ```
 
 Update the module path to your GitHub org or user when publishing.
@@ -53,7 +53,7 @@ package main
 
 import (
   "fmt"
-  avrophonetic "github.com/yourname/avro-phonetic-go"
+  avrophonetic "github.com/mhshajib/avro-phonetic-go"
 )
 
 func main() {
@@ -73,7 +73,7 @@ package main
 
 import (
   "fmt"
-  avrophonetic "github.com/yourname/avro-phonetic-go"
+  avrophonetic "github.com/mhshajib/avro-phonetic-go"
 )
 
 func main() {
